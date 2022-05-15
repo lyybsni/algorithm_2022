@@ -16,8 +16,8 @@ Day 1 (Questions 1~4)
 Day 2 (Questions 5~8)
 - [x] 05 Global Alignment
 - [x] 06 Local Alignment
-- [ ] 07 Edit Distance
-- [ ] 08 Fitting Alignment
+- [x] 07 Edit Distance
+- [x] 08 Fitting Alignment
 
 Day 3 (Questions 9~13)
 - [ ] 09 Overlap Alignment

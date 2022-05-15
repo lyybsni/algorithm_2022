@@ -1,0 +1,27 @@
+1 1 2
+GAGA
+GAT
+
+1 5 1
+TT
+CC
+
+1 1 5
+TT
+CC
+
+1 5 1
+GAACGATTG
+GGG
+
+2 3 1
+GCG
+CT
+
+1 2 3
+ACAGCTA
+G
+
+3 4 1
+A
+CGGAGTGCC

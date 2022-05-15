@@ -7,18 +7,18 @@ This course is for Bioinfomatics Algorithm, which may not be suitable for strong
 
 The catalogue for this course:
 ###### Sequence Alignment (2 Chapters)
-- Day 1 (Questions 1~4)
+Day 1 (Questions 1~4)
 - [x] 01 Coin
 - [x] 02 Grid
 - [x] 03 LCS Backtracking
 - [x] 04 DAG Backtracking
 
-- Day 2 (Questions 5~8)
+Day 2 (Questions 5~8)
 - [] 05 Global Alignment
 - [] 06 Local Alignment
 - [] 07 Edit Distance
 - [] 08 Fitting Alignment
 
-- Day 3 (Questions 9~13)
+Day 3 (Questions 9~13)
 
 ###### Hidden Markov Models for Sequence Alignment (2 Chapters)

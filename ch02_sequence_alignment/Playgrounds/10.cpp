@@ -3,20 +3,22 @@
 using namespace std;
 
 /**
- * @brief Fitting Alignment.
+ * @brief Affine Gap Problem.
  * 
- * Similar to local alignment, however the limit is fixed a little bit.
- * Where the searching cells should change (the overall complexity is not changed though).
+ * This question is tricky in removing the extra edges from O(n^3) to O(n^2).
+ * This solution has a strong assertions that the extension fee is lower or equal to the opening fee.
+ * Since the "equality" condition on CAS part will choose a gap over a match.
  */
 
 int point[1005][1005] = {0};
 int backtrack[1005][1005] = {0};
 
-int award, miss, gap;
+int award, miss, gap, extension;
 
 // simplify the comparison
 bool compareAndSwap(int& from, int& to) {
-    if (from < to) {
+    if (from <= to) {       // noted that, when we encounter a consecutive gap over a match
+                            // using "equal" sign to avoid stopping a non-match
         int temp = from;
         from = to;
         to = temp;
@@ -42,28 +44,25 @@ void solve(const string a, const string b, int x, int y) {
     }
 
     int p3 = point[x - 1][y] - gap;
+    if (backtrack[x-1][y] == 3) p3 += gap - extension;
     if (compareAndSwap(current, p3)) {
         backtrack[x][y] = 3;
     }
 
-    int p4 = point[x][y - 1] - gap;
+    int p4 = point[x][y - 1] - gap ;
+    if (backtrack[x][y-1] == 4) p4 += gap - extension;
     if (compareAndSwap(current, p4)) {
         backtrack[x][y] = 4;
-    }
-
-    if (current < 0) {
-        backtrack[x][y] = 5;
-        current = 0;
     }
 
     point[x][y] = current;
 }
 
-pair<string, string> backtrackResult(const string a, const string b, int target_x, int target_y) {
-    int x = target_x, y = target_y;
+pair<string, string> backtrackResult(const string a, const string b) {
+    int x = a.size(), y = b.size();
 
     string a_prime = "", b_prime = "";
-    while (x > 0 && y > 0) {
+    while (backtrack[x][y] != 0) {
         if (backtrack[x][y] < 3) {
             a_prime = a[x - 1] + a_prime;
             b_prime = b[y - 1] + b_prime;
@@ -73,13 +72,10 @@ pair<string, string> backtrackResult(const string a, const string b, int target_
             a_prime = '-' + a_prime;
             b_prime = b[y - 1] + b_prime;
             y--;
-        } else if (backtrack[x][y] == 3) {
+        } else {
             a_prime = a[x - 1] + a_prime;
             b_prime = '-' + b_prime;
             x--;
-        } else {
-            // hit the (0, 0) node
-            break;
         }
     }
 
@@ -87,12 +83,22 @@ pair<string, string> backtrackResult(const string a, const string b, int target_
 }
 
 int main() {
-    cin >> award >> miss >> gap;
+    cin >> award >> miss >> gap >> extension;
 
     string a, b;
     cin >> a >> b;
 
     int x = a.size(), y = b.size();
+
+    // noted there is always a deduction for blank case
+    for (int i = 1; i <= x; i++) {
+        point[i][0] = - gap + extension * (i-1) * -1;
+        backtrack[i][0] = 3;
+    }
+    for (int i = 1; i <= y; i++) {
+        point[0][i] = - gap + extension * (i-1) * -1;
+        backtrack[0][i] = 4;
+    }
 
     // do what we do in the LCS problem
     for (int i = 1; i <= x; i++) {
@@ -101,19 +107,8 @@ int main() {
         }
     }
 
-    int maxPoint = INT_MIN;
-    int target_x = 0, target_y = y;
-    // only fix: the selection of the second parameter
-    for (int i = 0; i <= x; i++) {
-        if (maxPoint < point[i][y]) {
-            target_x = i;
-            maxPoint = point[i][y];
-        }
-    }
-
-    cout << maxPoint << endl;
-    
-    pair<string, string> bac = backtrackResult(a, b, target_x, target_y);
+    cout << point[x][y] << endl;
+    pair<string, string> bac = backtrackResult(a, b);
     cout << bac.first << endl << bac.second << endl;
 
     return 0;

@@ -3,10 +3,10 @@
 using namespace std;
 
 /**
- * @brief Fitting Alignment.
+ * @brief Overlap Alignment.
  * 
- * Similar to local alignment, however the limit is fixed a little bit.
- * Where the searching cells should change (the overall complexity is not changed though).
+ * The substrings to be considered are the tail substrings from s, and leading substrings from t.
+ * Therefore, by using the "free-taxi" idea, the first line will be initialized as all 0s.
  */
 
 int point[1005][1005] = {0};
@@ -51,11 +51,6 @@ void solve(const string a, const string b, int x, int y) {
         backtrack[x][y] = 4;
     }
 
-    if (current < 0) {
-        backtrack[x][y] = 5;
-        current = 0;
-    }
-
     point[x][y] = current;
 }
 
@@ -77,9 +72,6 @@ pair<string, string> backtrackResult(const string a, const string b, int target_
             a_prime = a[x - 1] + a_prime;
             b_prime = '-' + b_prime;
             x--;
-        } else {
-            // hit the (0, 0) node
-            break;
         }
     }
 
@@ -94,6 +86,11 @@ int main() {
 
     int x = a.size(), y = b.size();
 
+    // still need to initialize the first column
+    for (int i = 0; i <= y; i++) {
+        point[0][i] = gap * i * -1;
+    }
+
     // do what we do in the LCS problem
     for (int i = 1; i <= x; i++) {
         for (int j = 1; j <= y; j++) {
@@ -102,12 +99,13 @@ int main() {
     }
 
     int maxPoint = INT_MIN;
-    int target_x = 0, target_y = y;
-    // only fix: the selection of the second parameter
-    for (int i = 0; i <= x; i++) {
-        if (maxPoint < point[i][y]) {
-            target_x = i;
-            maxPoint = point[i][y];
+    int target_x = 0, target_y = 0;
+    
+    for (int j = 0; j <= y; j++) {      // avoid no output
+        if (maxPoint <= point[x][j]) {
+            target_x = x;
+            target_y = j;
+            maxPoint = point[x][j];
         }
     }
 

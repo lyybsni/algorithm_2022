@@ -20,20 +20,27 @@ Day 2 (Questions 5~8)
 - [x] 08 Fitting Alignment
 
 Day 3 (Questions 9~13)
-- [ ] 09 Overlap Alignment
-- [ ] 10 Affine Gap Penality
+- [x] 09 Overlap Alignment
+- [x] 10 Affine Gap Penality
 - [ ] 11 Alignment Graph
 - [ ] 12 Global Alignment in Linear Space
 - [ ] 13 Multiple Alignment
 
 ##### Hidden Markov Models for Sequence Alignment (2 Chapters)
 
-Day 4 (Questions 14~17)
+Day 4 (Questions 14~18)
 - [ ] 14 HMM Probability Path
 - [ ] 15 Hidden Path
 - [ ] 16 Optimal Hidden Path
 - [ ] 17 Likelihood
 
 Day 5 (Questions 18~21)
+- [ ] 18 Constructing a Profile HMM
+- [ ] 19 Profile HMM with Pseudocounts
+- [ ] 20 Sequence Alignment with a Profile HMM
+- [ ] 21 HMM Parameter Estimation
 
-Day 6 (Questions 22~25)
+Day 6 (Questions 22~24)
+- [ ] 22 HMM Parameter Estimation with Viterbi Learning
+- [ ] 23 Soft Decoding
+- [ ] 24 Baum-Welch Learning

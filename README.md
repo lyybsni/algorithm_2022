@@ -1,6 +1,8 @@
-## Recovery for Algorithm and Programming
+# Recovery for Algorithm and Programming
 
-### Source 1: Dynamic Programming: Applications In Machine Learning and Genomics on EdX
+## Series 1 MicroMaster from UCSanDiego on EdX
+
+### Source 1: Dynamic Programming: Applications In Machine Learning and Genomics
 
 #### Scope
 This course is for Bioinfomatics Algorithm, which may not be suitable for strong computer science insights, though it can be regarded as a beginning point for knowledge recovery.
@@ -46,3 +48,7 @@ Day 6 (Questions 22~24)
 - [ ] 22 HMM Parameter Estimation with Viterbi Learning
 - [ ] 23 Soft Decoding
 - [ ] 24 Baum-Welch Learning
+
+### Source 2: NP-Complete Problems (Expected to start in late May)
+
+### Source 3: String Processing and Pattern Matching Algorithms (Expected to start in early June)

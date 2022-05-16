@@ -22,9 +22,11 @@ Day 2 (Questions 5~8)
 Day 3 (Questions 9~13)
 - [x] 09 Overlap Alignment
 - [x] 10 Affine Gap Penality
-- [ ] 11 Alignment Graph
-- [ ] 12 Global Alignment in Linear Space
-- [ ] 13 Multiple Alignment
+- [x] 13 Multiple Alignment
+
+Questions below are temporarily skipped.
+- 11 Alignment Graph
+- 12 Global Alignment in Linear Space
 
 ##### Hidden Markov Models for Sequence Alignment (2 Chapters)
 

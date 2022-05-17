@@ -18,13 +18,13 @@ Day 1 (Questions 1~4)
 Day 2 (Questions 5~8)
 - [x] 05 Global Alignment
 - [x] 06 Local Alignment
-- [x] 07 Edit Distance
-- [x] 08 Fitting Alignment
+- [x] 07 Edit Distance (P)
+- [x] 08 Fitting Alignment (P)
 
 Day 3 (Questions 9~13)
 - [x] 09 Overlap Alignment
 - [x] 10 Affine Gap Penality
-- [x] 13 Multiple Alignment
+- [x] 13 Multiple Alignment (P?)
 
 Questions below are temporarily skipped.
 - 11 Alignment Graph
@@ -33,7 +33,7 @@ Questions below are temporarily skipped.
 ##### Hidden Markov Models for Sequence Alignment (2 Chapters)
 
 Day 4 (Questions 14~18)
-- [x] 14 HMM Probability Path
+- [x] 14 HMM Probability Path (P)
 - [x] 15 Hidden Path
 - [ ] 16 Optimal Hidden Path
 - [ ] 17 Likelihood

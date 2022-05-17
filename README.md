@@ -33,8 +33,8 @@ Questions below are temporarily skipped.
 ##### Hidden Markov Models for Sequence Alignment (2 Chapters)
 
 Day 4 (Questions 14~18)
-- [ ] 14 HMM Probability Path
-- [ ] 15 Hidden Path
+- [x] 14 HMM Probability Path
+- [x] 15 Hidden Path
 - [ ] 16 Optimal Hidden Path
 - [ ] 17 Likelihood
 
